@@ -1,0 +1,152 @@
+<div class="p-4" style="font-family: sans-serif; max-width: 900px; margin: 0 auto;">
+  <h1>PrimeNG Component Showcase</h1>
+
+  <!-- BUTTONS -->
+  <section>
+    <h2>Buttons</h2>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <p-button label="Default" />
+      <p-button label="Success" severity="success" />
+      <p-button label="Info" severity="info" />
+      <p-button label="Warning" severity="warn" />
+      <p-button label="Danger" severity="danger" />
+      <p-button label="Outlined" [outlined]="true" />
+      <p-button label="Rounded" [rounded]="true" />
+      <p-button label="Loading" [loading]="true" />
+    </div>
+  </section>
+
+  <!-- INPUT TEXT -->
+  <section style="margin-top: 24px;">
+    <h2>Input Text</h2>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+      <input pInputText placeholder="Basic input" />
+      <input pInputText placeholder="Disabled" disabled />
+    </div>
+  </section>
+
+  <!-- DROPDOWN -->
+  <section style="margin-top: 24px;">
+    <h2>Select (Dropdown)</h2>
+    <p-select [options]="cities" optionLabel="name" placeholder="Select a city" />
+  </section>
+
+  <!-- MULTISELECT -->
+  <section style="margin-top: 24px;">
+    <h2>Multi Select</h2>
+    <p-multiselect [options]="cities" optionLabel="name" placeholder="Select cities" />
+  </section>
+
+  <!-- CALENDAR -->
+  <section style="margin-top: 24px;">
+    <h2>Date Picker</h2>
+    <p-datepicker placeholder="Pick a date" />
+  </section>
+
+  <!-- CHECKBOX -->
+  <section style="margin-top: 24px;">
+    <h2>Checkbox</h2>
+    <div style="display: flex; gap: 16px; align-items: center;">
+      <p-checkbox [(ngModel)]="checked1" [binary]="true" label="Option A" />
+      <p-checkbox [(ngModel)]="checked2" [binary]="true" label="Option B" />
+    </div>
+  </section>
+
+  <!-- TOGGLE BUTTON -->
+  <section style="margin-top: 24px;">
+    <h2>Toggle Button</h2>
+    <p-togglebutton [(ngModel)]="toggled" onLabel="ON" offLabel="OFF" />
+  </section>
+
+  <!-- SLIDER -->
+  <section style="margin-top: 24px;">
+    <h2>Slider</h2>
+    <p-slider [(ngModel)]="sliderValue" style="width: 300px; display: block;" />
+    <span>Value: {{ sliderValue }}</span>
+  </section>
+
+  <!-- RATING -->
+  <section style="margin-top: 24px;">
+    <h2>Rating</h2>
+    <p-rating [(ngModel)]="rating" />
+  </section>
+
+  <!-- PROGRESS BAR -->
+  <section style="margin-top: 24px;">
+    <h2>Progress Bar</h2>
+    <p-progressbar [value]="65" style="width: 300px; display: block;" />
+  </section>
+
+  <!-- TAG -->
+  <section style="margin-top: 24px;">
+    <h2>Tags & Badges</h2>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+      <p-tag value="Default" />
+      <p-tag value="Success" severity="success" />
+      <p-tag value="Info" severity="info" />
+      <p-tag value="Warning" severity="warn" />
+      <p-tag value="Danger" severity="danger" />
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section style="margin-top: 24px;">
+    <h2>Table</h2>
+    <p-table [value]="tableData" [tableStyle]="{ 'min-width': '400px' }">
+      <ng-template #header>
+        <tr>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Status</th>
+        </tr>
+      </ng-template>
+      <ng-template #body let-row>
+        <tr>
+          <td>{{ row.name }}</td>
+          <td>{{ row.country }}</td>
+          <td><p-tag [value]="row.status" [severity]="row.severity" /></td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </section>
+
+  <!-- PANEL -->
+  <section style="margin-top: 24px;">
+    <h2>Panel</h2>
+    <p-panel header="Collapsible Panel" [toggleable]="true">
+      <p>This is the panel content. It can be collapsed by clicking the toggle icon.</p>
+    </p-panel>
+  </section>
+
+  <!-- CARD -->
+  <section style="margin-top: 24px;">
+    <h2>Card</h2>
+    <p-card header="Card Title" subheader="Card Subtitle" [style]="{'max-width': '300px', 'display': 'block'}">
+      <p>Card body content goes here.</p>
+      <ng-template #footer>
+        <p-button label="Action" />
+      </ng-template>
+    </p-card>
+  </section>
+
+  <!-- MESSAGES -->
+  <section style="margin-top: 24px;">
+    <h2>Messages</h2>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <p-message severity="success" text="Operation completed successfully." />
+      <p-message severity="info" text="Here is some information." />
+      <p-message severity="warn" text="Watch out for this warning." />
+      <p-message severity="error" text="Something went wrong." />
+    </div>
+  </section>
+
+  <!-- CHIPS -->
+  <section style="margin-top: 24px; margin-bottom: 40px;">
+    <h2>Chip</h2>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <p-chip label="Angular" />
+      <p-chip label="PrimeNG" [removable]="true" />
+      <p-chip label="TypeScript" icon="pi pi-code" />
+    </div>
+  </section>
+</div>
