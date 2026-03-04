@@ -1,1 +1,22 @@
-<router-outlet />
+<div class="big-container">
+  <div class="top-bar">
+    <div class="color-picker">
+      @for (color of colors; track color.name) {
+      <button class="color-swatch" [class.active]="activeColor() === color.name" [style.background]="color.swatch"
+        [title]="color.name" (click)="applyColor(color)"></button>
+      }
+    </div>
+    <div class="dark-mode-toggle">
+      @if(darkMode()){
+      <span class="toggle-label">Light</span>
+      }
+      @else{
+      <span class="toggle-label">Dark</span>
+      }
+      <p-toggleswitch [(ngModel)]="darkMode" (ngModelChange)="toggleDarkMode($event)" />
+    </div>
+  </div>
+  <div class="main-content">
+    <router-outlet />
+  </div>
+</div>
